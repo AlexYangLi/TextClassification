@@ -28,7 +28,7 @@ class KerasBaseModel(BaseModel):
         super(KerasBaseModel, self).__init__()
         self.config = config
         self.level = self.config.input_level
-        self.max_len = self.config.max_len[self.config.level]
+        self.max_len = self.config.max_len[self.config.input_level]
         self.word_embeddings = config.word_embeddings
         self.n_class = config.n_class
 
