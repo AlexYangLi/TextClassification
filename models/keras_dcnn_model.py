@@ -19,6 +19,7 @@ from keras.layers import Input, Embedding, SpatialDropout1D, Conv1D, Flatten, De
 
 from models.keras_base_model import KerasBaseModel
 from layers.kmaxpooling import KMaxPooling
+from layers.folding import Folding
 
 
 class DCNN(KerasBaseModel):

@@ -44,7 +44,7 @@ class HAN(KerasBaseModel):
 
     def word_encoder(self):
         input_words = Input(shape=(self.max_len,))
-        word_vectors = Embedding(input_dim=self.word_embeddings.shape[0], output_dim=self.config.embedding_dim,
+        word_vectors = Embedding(input_dim=self.word_embeddings.shape[0], output_dim=self.word_embeddings.shape[1],
                                  weights=[self.word_embeddings], mask_zero=True,
                                  trainable=self.config.word_embed_trainable)(input_words)
         sent_encoded = Bidirectional(GRU(self.config.rnn_units, return_sequences=True))(word_vectors)
