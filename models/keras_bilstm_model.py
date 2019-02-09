@@ -16,7 +16,7 @@
 
 from keras.models import Model
 from keras.layers import Input, Embedding, SpatialDropout1D, Dense, LSTM, Bidirectional, Lambda
-from keras.backend import K
+import keras.backend as K
 
 from models.keras_base_model import KerasBaseModel
 
