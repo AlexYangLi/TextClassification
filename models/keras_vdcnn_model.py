@@ -25,14 +25,10 @@ from layers.kmaxpooling import KMaxPooling
 
 
 class VDCNN(KerasBaseModel):
-    def __init__(self, config):
-        super(VDCNN, self).__init__(config)
+    def __init__(self, config, **kwargs):
+        super(VDCNN, self).__init__(config, **kwargs)
 
-    def build(self):
-        depth = [4, 4, 10, 10]
-        pooling_type = 'maxpool'
-        use_shortcut = False
-
+    def build(self, depth=[4, 4, 10, 10], pooling_type='maxpool', use_shortcut = False):
         input_text = Input(shape=(self.max_len,))
 
         embedding_layer = Embedding(self.word_embeddings.shape[0], self.word_embeddings.shape[1],

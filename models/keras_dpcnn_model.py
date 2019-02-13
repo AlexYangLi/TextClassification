@@ -22,8 +22,8 @@ from models.keras_base_model import KerasBaseModel
 
 
 class DPCNN(KerasBaseModel):
-    def __init__(self, config):
-        super(DPCNN, self).__init__(config)
+    def __init__(self, config, **kwargs):
+        super(DPCNN, self).__init__(config, **kwargs)
 
     def build(self):
         input_text = Input(shape=(self.max_len,))

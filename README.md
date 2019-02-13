@@ -39,3 +39,7 @@ Bidirectional lstm + max pooling over time.
 - RNNCNN
 
 Bidirectional gru + conv + max pooling & avg pooling.
+
+- CNNRNN
+
+conv + max pooling + Bidirectional gru + max pooling over time.

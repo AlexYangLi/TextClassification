@@ -21,8 +21,8 @@ from models.keras_base_model import KerasBaseModel
 
 
 class MultiTextCNN(KerasBaseModel):
-    def __init__(self, config):
-        super(MultiTextCNN, self).__init__(config)
+    def __init__(self, config, **kwargs):
+        super(MultiTextCNN, self).__init__(config, **kwargs)
 
     def build(self):
         input_text = Input(shape=(self.max_len,))

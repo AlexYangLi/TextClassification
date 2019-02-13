@@ -24,7 +24,7 @@ from utils.metrics import eval_acc
 
 
 class KerasBaseModel(BaseModel):
-    def __init__(self, config):
+    def __init__(self, config, **kwargs):
         super(KerasBaseModel, self).__init__()
         self.config = config
         self.level = self.config.input_level
@@ -35,7 +35,7 @@ class KerasBaseModel(BaseModel):
         self.callbacks = []
         self.init_callbacks()
 
-        self.model = self.build()
+        self.model = self.build(**kwargs)
 
     def init_callbacks(self):
         self.callbacks.append(ModelCheckpoint(
@@ -67,9 +67,6 @@ class KerasBaseModel(BaseModel):
         """Build the model"""
 
     def train(self, data_train, data_dev=None):
-        if self.model is None:
-            self.model = self.build()
-
         x_train, y_train = data_train
 
         logging.info('start training...')

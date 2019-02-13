@@ -22,8 +22,8 @@ from models.keras_base_model import KerasBaseModel
 
 
 class RCNN(KerasBaseModel):
-    def __init__(self, config):
-        super(RCNN, self).__init__(config)
+    def __init__(self, config, **kwargs):
+        super(RCNN, self).__init__(config, **kwargs)
 
     def build(self):
         input_text = Input(shape=(self.max_len,))

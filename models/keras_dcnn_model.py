@@ -23,8 +23,8 @@ from layers.folding import Folding
 
 
 class DCNN(KerasBaseModel):
-    def __init__(self, config):
-        super(DCNN, self).__init__(config)
+    def __init__(self, config, **kwargs):
+        super(DCNN, self).__init__(config, **kwargs)
 
     def build(self):
         input_text = Input(shape=(self.max_len,))

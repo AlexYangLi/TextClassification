@@ -23,8 +23,8 @@ from layers.attention import SelfAttention
 
 
 class HAN(KerasBaseModel):
-    def __init__(self, config):
-        super(HAN, self).__init__(config)
+    def __init__(self, config, **kwargs):
+        super(HAN, self).__init__(config, **kwargs)
 
     def build(self):
         input_text = Input(shape=(self.config.han_max_sent, self.max_len))
