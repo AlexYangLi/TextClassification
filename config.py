@@ -19,7 +19,7 @@ from keras.optimizers import Adam
 class Config(object):
     def __init__(self):
         # input configuration
-        self.level = 'word'
+        self.input_level = 'word'
         self.word_max_len = 128
         self.char_max_len = 200
         self.max_len = {'word': self.word_max_len,
